@@ -1,0 +1,25 @@
+<form class="formulario">
+    <div class="mb-3">
+      <label for="cep" class="form-label">CEP</label>
+      <input type="text" id="cep" class="form-control" [(ngModel)]="cep" name="cep" required (blur)="buscar()" />
+    </div>
+    <div class="mb-3">
+      <label for="logradouro" class="form-label">Logradouro</label>
+      <input type="text" id="logradouro" class="form-control" [(ngModel)]="logradouro" name="logradouro" disabled />
+    </div>
+    <div class="mb-3">
+      <label for="bairro" class="form-label"></label>
+      <input type="text" id="bairro" class="form-control" [(ngModel)]="bairro" name="bairro" disabled />
+    </div>
+    <div class="mb-3">
+      <label for="cidade" class="form-label">Cidade</label>
+      <input type="text" id="cidade" class="form-control" [(ngModel)]="cidade" name="cidade" disabled />
+    </div>
+    <div class="mb-3">
+      <label for="estado" class="form-label">Estado</label>
+      <input type="text" id="estado" class="form-control" [(ngModel)]="estado" name="estado" disabled />
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="buscar()">Consultar</button>
+  </form>
+
+  <div id="map" style="height: 400px; margin-top: 20px;"></div>

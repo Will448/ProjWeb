@@ -1,0 +1,30 @@
+<div class="cadastro-wrapper">
+
+
+  <!-- Imagem de fundo -->
+  <img src="cadastrar.jpg" alt="Imagem de Fundo Cadastro" class="background-image">
+
+  <!-- Formulário ÚNICO -->
+  <form class="formulario" (ngSubmit)="salvar()" #form="ngForm">
+    <h2>Cadastre-se</h2>
+
+    <label class="mb-2">Nome:</label>
+    <input class="form-control" type="text" name="nome" id="nome"
+           (change)="validaNome()" [(ngModel)]="usuario.nome" required />
+    <span *ngIf="isNome" class="erro-msg">Nome inválido</span>
+
+    <label class="mb-2">Email:</label>
+    <input class="form-control" type="email" name="email" id="email"
+           (change)="validaEmail()" [(ngModel)]="usuario.email" required />
+    <span *ngIf="isEmail" class="erro-msg">Email inválido</span>
+
+    <label class="mb-2">Senha:</label>
+    <input class="form-control" type="password" name="senha" id="senha"
+           (change)="validaSenha()" [(ngModel)]="usuario.senha" required />
+    <span *ngIf="isSenha" class="erro-msg">Senha inválida</span>
+
+    <button class="btn-entrar" type="submit" [disabled]="form.invalid">
+      {{ usuario.id ? 'Atualizar Usuário' : 'Cadastrar Usuário' }}
+    </button>
+  </form>
+</div>

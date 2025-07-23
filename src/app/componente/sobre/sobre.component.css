@@ -1,0 +1,404 @@
+/* Estilos Globais */
+.sobre-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Seção Hero */
+.hero-section {
+background-color: #f4f4f4;
+  color: rgb(0, 0, 0);
+  padding: 40px 0; /* de 80px para 40px */
+  text-align: center;
+  width: auto;
+  height: 680px;
+
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.titulo-principal {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+
+}
+
+.subtitulo {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  opacity: 0.95;
+}
+
+.video-container {
+  max-width: 600px;  /* Aumentei de 300px para 600px */
+  margin: 0 auto 40px auto; /* adicionei margem inferior para espaçamento */
+}
+
+.video-demo {
+  width: 700px;
+  max-width: 800px;  /* Mantém proporcional ao container */
+  height: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+
+/* Seção Problema */
+.problema-section {
+  padding: 80px 0;
+  background: #f8f8f8;
+}
+
+.problema-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #D00000;
+  margin-bottom: 50px;
+}
+
+.problema-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.problema-item {
+  display: flex;
+  align-items: flex-start;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-left: 5px solid #FFD100;
+}
+
+.problema-icon {
+  font-size: 2.5rem;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.problema-text h3 {
+  color: #D00000;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.problema-text p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Seção Funcionalidades */
+.funcionalidades-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.funcionalidades-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #D00000;
+  margin-bottom: 50px;
+}
+
+.funcionalidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.funcionalidade-card {
+  background: white;
+  border: 2px solid #FFD100;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.funcionalidade-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.func-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.funcionalidade-card h3 {
+  color: #D00000;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.funcionalidade-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Seção Benefícios */
+.beneficios-section {
+  padding: 80px 0;
+  background: #f8f8f8;
+}
+
+.beneficios-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #D00000;
+  margin-bottom: 50px;
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+}
+
+.beneficio-grupo {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.beneficio-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #FFD100;
+}
+
+.beneficio-icon {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
+.beneficio-header h3 {
+  color: #D00000;
+  font-size: 1.4rem;
+}
+
+.beneficio-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.beneficio-lista li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+.check-icon {
+  color: #28a745;
+  font-weight: bold;
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+
+/* Seção Mercado */
+.mercado-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.mercado-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #D00000;
+  margin-bottom: 50px;
+}
+
+.mercado-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.mercado-item {
+  background: #f8f8f8;
+  padding: 30px;
+  border-radius: 12px;
+  border-left: 5px solid #FFD100;
+}
+
+.mercado-item h3 {
+  color: #D00000;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.mercado-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Seção Equipe */
+.equipe-section {
+  padding: 80px 0;
+  background: #f8f8f8;
+}
+
+.equipe-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #D00000;
+  margin-bottom: 50px;
+}
+
+.equipe-content {
+  text-align: center;
+}
+
+.empresa-info {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.empresa-info h3 {
+  color: #D00000;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.empresa-info p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.membros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.membro {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 2px solid #FFD100;
+}
+
+.membro-avatar {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.membro h4 {
+  color: #D00000;
+  margin-bottom: 10px;
+}
+
+.membro p {
+  color: #666;
+}
+
+/* Seção CTA */
+.cta-section {
+  padding: 80px 0;
+    background-color: #f4f4f4;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.btn-primary {
+  background: white;
+  color: #D00000;
+}
+
+.btn-primary:hover {
+  background: #f8f8f8;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #D00000;
+  transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .titulo-principal {
+    font-size: 2.5rem;
+  }
+  
+  .subtitulo {
+    font-size: 1.1rem;
+  }
+  
+  .beneficios-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+}

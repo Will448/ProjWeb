@@ -1,0 +1,52 @@
+<div class="avaliacao-container">
+  <!-- Informações do Posto -->
+  <div class="info-posto" *ngIf="postoSelecionado">
+    <div class="card-posto">
+      <img [src]="getImagemPosto(postoSelecionado.id)" alt="Imagem do Posto">
+      <h3>{{ postoSelecionado.nome }}</h3>
+      <p class="endereco">{{ postoSelecionado.endereco }}</p>
+      
+      <div class="info-section">
+        <h4>📞 Telefone</h4>
+        <p>{{ postoSelecionado.telefone }}</p>
+      </div>
+
+      <div class="info-section">
+        <h4>🕒 Horário de Atendimento</h4>
+        <p>{{ postoSelecionado.horario }}</p>
+      </div>
+
+      <div class="info-section">
+        <h4>⛽ Combustíveis</h4>
+        <ul class="lista-itens">
+          <li *ngFor="let combustivel of postoSelecionado.combustiveis">{{ combustivel }}</li>
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <h4>🏪 Serviços</h4>
+        <ul class="lista-itens">
+          <li *ngFor="let servico of postoSelecionado.servicos">{{ servico }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulário de Avaliação -->
+  <div class="formulario">
+    <h2>Deixe sua Avaliação</h2>
+
+    <label for="usuario">Nome:</label>
+    <input id="usuario" type="text" [(ngModel)]="novaAvaliacao.usuario" placeholder="Seu nome" />
+
+    <label for="nota">Nota:</label>
+    <select id="nota" [(ngModel)]="novaAvaliacao.nota">
+      <option *ngFor="let nota of notas" [value]="nota">{{ nota }}</option>
+    </select>
+
+    <label for="comentario">Comentário:</label>
+    <textarea id="comentario" rows="4" [(ngModel)]="novaAvaliacao.comentario" placeholder="Digite seu comentário..."></textarea>
+
+    <button class="btn-enviar" (click)="enviarAvaliacao()">Enviar Avaliação</button>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+/* Wrapper geral com fundo */
+.cadastro-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Imagem de fundo como <img> */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  z-index: 1;
+}
+
+/* Formulário por cima */
+.formulario {
+  position: relative;
+  z-index: 2;
+  max-width: 400px;
+  width: 90%;
+  margin: 60px auto;
+  background: rgba(255, 255, 255, 0.95);
+  border: 3px solid #ffc300; /* Amarelo Shell */
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.formulario h2 {
+  color: #e4002b; /* Vermelho Shell */
+  margin-bottom: 20px;
+}
+
+.formulario label {
+  font-weight: 600;
+}
+
+.formulario input {
+  margin-bottom: 10px;
+}
+
+.erro-msg {
+  color: #e4002b;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.btn-entrar {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #e4002b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-entrar:hover {
+  background: #b50022;
+}

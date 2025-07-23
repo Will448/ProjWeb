@@ -1,0 +1,168 @@
+<div class="sobre-container">
+  <!-- Seção Hero -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="titulo-principal">RotaTruck</h1>
+      <p class="subtitulo">Conectando caminhoneiros e postos de combustível de forma eficiente e conveniente</p>
+      
+     <!-- Área do Vídeo -->
+<div class="video-container">
+
+
+  <video controls class="video-demo">
+    <source src="rota-truck.mp4" type="video/mp4">
+    Seu navegador não suporta vídeos HTML5.
+  </video>
+
+</div>
+
+    </div>
+  </section>
+
+  <!-- Seção Problema -->
+  <section class="problema-section">
+    <div class="container">
+      <h2>O Problema</h2>
+      <div class="problema-content">
+        <div class="problema-item">
+          <div class="problema-icon">🚛</div>
+          <div class="problema-text">
+            <h3>2 milhões de caminhoneiros</h3>
+            <p>No Brasil enfrentam dificuldades para encontrar postos com serviços de qualidade</p>
+          </div>
+        </div>
+        
+        <div class="problema-item">
+          <div class="problema-icon">⛽</div>
+          <div class="problema-text">
+            <h3>41.808 postos</h3>
+            <p>Revendedores de combustível operando no país com pouca conectividade</p>
+          </div>
+        </div>
+        
+        <div class="problema-item">
+          <div class="problema-icon">📍</div>
+          <div class="problema-text">
+            <h3>Falta de informação</h3>
+            <p>Sobre serviços, preços e disponibilidade em tempo real</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Funcionalidades -->
+  <section class="funcionalidades-section">
+    <div class="container">
+      <h2>Principais Funcionalidades</h2>
+      <div class="funcionalidades-grid">
+        <div class="funcionalidade-card" *ngFor="let func of funcionalidades">
+          <div class="func-icon">{{ func.icone }}</div>
+          <h3>{{ func.titulo }}</h3>
+          <p>{{ func.descricao }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Benefícios -->
+  <section class="beneficios-section">
+    <div class="container">
+      <h2>Benefícios</h2>
+      <div class="beneficios-grid">
+        
+        <!-- Benefícios para Caminhoneiros -->
+        <div class="beneficio-grupo">
+          <div class="beneficio-header">
+            <div class="beneficio-icon">🚛</div>
+            <h3>Para Caminhoneiros</h3>
+          </div>
+          <ul class="beneficio-lista">
+            <li *ngFor="let beneficio of beneficios.caminhoneiros">
+              <span class="check-icon">✓</span>
+              {{ beneficio }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Benefícios para Postos -->
+        <div class="beneficio-grupo">
+          <div class="beneficio-header">
+            <div class="beneficio-icon">⛽</div>
+            <h3>Para Postos de Combustível</h3>
+          </div>
+          <ul class="beneficio-lista">
+            <li *ngFor="let beneficio of beneficios.postos">
+              <span class="check-icon">✓</span>
+              {{ beneficio }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Mercado -->
+  <section class="mercado-section">
+    <div class="container">
+      <h2>Foco de Mercado</h2>
+      <div class="mercado-content">
+        <div class="mercado-item">
+          <h3>📍 Região Sul</h3>
+          <p>Concentração inicial nos estados de <strong>Santa Catarina, Paraná e Rio Grande do Sul</strong>, devido às rotas estratégicas para os portos.</p>
+        </div>
+        
+        <div class="mercado-item">
+          <h3>🛣️ Postos de BR</h3>
+          <p>Foco nos <strong>"postos de BR"</strong> que oferecem infraestrutura adequada para caminhoneiros.</p>
+        </div>
+        
+        <div class="mercado-item">
+          <h3>🌾 Período de Safra</h3>
+          <p>Aproveitamento do período quando o <strong>mercado de transportes está mais ativo</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Equipe -->
+  <section class="equipe-section">
+    <div class="container">
+      <h2>Nossa Equipe</h2>
+      <div class="equipe-content">
+        <div class="empresa-info">
+          <h3>Innova Solutions Ltda</h3>
+          <p>Equipe composta por acadêmicos das áreas de <strong>Administração</strong> e <strong>Sistemas de Informação</strong>, com experiência em inovação e empreendedorismo.</p>
+        </div>
+        
+        <div class="membros-grid">
+          <div class="membro">
+            <div class="membro-avatar">👨‍💼</div>
+            <h4>Willian de Vicentin Bongiovanni</h4>
+            <p>Desenvolvimento & Gestão</p>
+          </div>
+          
+          <div class="membro">
+            <div class="membro-avatar">👨‍💻</div>
+            <h4>Gabriel Nogueira</h4>
+            <p>Desenvolvimento & Inovação</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Junte-se à Revolução do Transporte</h2>
+        <p>Faça parte da comunidade que está transformando a experiência dos caminhoneiros no Brasil.</p>
+        <div class="cta-buttons">
+          <button class="btn-primary">Sou Caminhoneiro</button>
+          <button class="btn-secondary">Tenho um Posto</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

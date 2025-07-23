@@ -1,0 +1,166 @@
+<div class="container-fluid">
+  <!-- Formulário de pesquisa -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>Buscar Postos de Combustível</h4>
+        </div>
+        <div class="card-body">
+          <form class="formulario" (ngSubmit)="buscarEndereco()">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="cep" class="form-label">CEP</label>
+                <input 
+                  type="text" 
+                  id="cep" 
+                  class="form-control" 
+                  [(ngModel)]="cep" 
+                  name="cep" 
+                  placeholder="Digite o CEP (ex: 80000000)" 
+                  maxlength="8"
+                  required
+                  (blur)="buscarEndereco()"
+                />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="logradouro" class="form-label">Logradouro</label>
+                <input 
+                  type="text" 
+                  id="logradouro" 
+                  class="form-control" 
+                  [(ngModel)]="logradouro" 
+                  name="logradouro" 
+                  readonly
+                />
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="bairro" class="form-label">Bairro</label>
+                <input 
+                  type="text" 
+                  id="bairro" 
+                  class="form-control" 
+                  [(ngModel)]="bairro" 
+                  name="bairro" 
+                  readonly
+                />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cidade" class="form-label">Cidade</label>
+                <input 
+                  type="text" 
+                  id="cidade" 
+                  class="form-control" 
+                  [(ngModel)]="cidade" 
+                  name="cidade" 
+                  readonly
+                />
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="estado" class="form-label">Estado</label>
+                <input 
+                  type="text" 
+                  id="estado" 
+                  class="form-control" 
+                  [(ngModel)]="estado" 
+                  name="estado" 
+                  readonly
+                />
+              </div>
+              <div class="col-md-6 mb-3 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary me-2">
+                  <i class="fas fa-search"></i> Consultar
+                </button>
+                <button type="button" class="btn btn-secondary" (click)="limparFormulario()">
+                  <i class="fas fa-eraser"></i> Limpar
+                </button>
+              </div>
+            </div>
+          </form>
+          
+          <!-- Informações do endereço encontrado -->
+          <div *ngIf="endereco" class="mt-3">
+            <div class="alert alert-success">
+              <h6><i class="fas fa-check-circle"></i> Endereço encontrado:</h6>
+              <p class="mb-0">{{ endereco.logradouro }}, {{ endereco.bairro }} - {{ endereco.localidade }}/{{ endereco.uf }}</p>
+            </div>
+          </div>
+          
+          <!-- Mensagem de erro -->
+          <div *ngIf="mensagemErro" class="mt-3">
+            <div class="alert alert-danger">
+              <h6><i class="fas fa-exclamation-triangle"></i> Erro:</h6>
+              <p class="mb-0">{{ mensagemErro }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seção do mapa -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>Mapa de Postos</h4>
+        </div>
+        <div class="card-body p-0">
+          <div id="mapa"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lista de postos encontrados -->
+  <div class="row" *ngIf="postosFiltrados.length > 0">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>Postos Encontrados ({{ postosFiltrados.length }})</h4>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 col-lg-4 mb-3" *ngFor="let posto of postosFiltrados">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">{{ posto.nome }}</h5>
+                  <p class="card-text">
+                    <strong>Endereço:</strong> {{ posto.endereco }}<br>
+                    <strong>Cidade:</strong> {{ posto.cidade }}<br>
+                    <strong>Preço:</strong> R$ {{ posto.preco.toFixed(2) }}<br>
+                    <span *ngIf="posto.distancia">
+                      <strong>Distância:</strong> {{ posto.distancia.toFixed(1) }} km<br>
+                    </span>
+                    <strong>Serviços:</strong> {{ posto.servicos.join(', ') }}
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">
+                    <i class="fas fa-map-marker-alt"></i> {{ posto.cidade }}
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensagem quando nenhum posto é encontrado -->
+  <div class="row" *ngIf="postosFiltrados.length === 0 && endereco">
+    <div class="col-12">
+      <div class="alert alert-warning">
+        <h6>Nenhum posto encontrado</h6>
+        <p class="mb-0">Não foram encontrados postos próximos ao CEP informado. Tente buscar um CEP de outra região.</p>
+      </div>
+    </div>
+  </div>
+</div>

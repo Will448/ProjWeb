@@ -1,0 +1,16 @@
+<div class="container">
+  <h2 class="titulo">Busca de Postos</h2>
+
+  <div *ngIf="postos.length === 0">
+    Carregando postos...
+  </div>
+
+  <div class="grid-postos" *ngIf="postos.length > 0">
+    <div class="card" *ngFor="let posto of postos">
+      <img [src]="getImagemPosto(posto.id)" alt="Imagem do Posto">
+      <h3>{{ posto.nome }}</h3>
+      <p>{{ posto.endereco }}</p>
+      <button (click)="avaliarPosto(posto)">Avaliar</button>
+    </div>
+  </div>
+</div>
